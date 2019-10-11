@@ -47,14 +47,14 @@ class ClientMPD():
     def currentsong(self):
         """Return current song details."""
         self._client.noidle()
-        result = self._client.currentsong()
+        result = self._client.currentsong()  # pylint: disable=no-member
         self._client.send_idle('player')
         return result
 
     def status(self):
         """Return current status details."""
         self._client.noidle()
-        result = self._client.status()
+        result = self._client.status()  # pylint: disable=no-member
         self._client.send_idle('player')
         return result
 

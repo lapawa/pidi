@@ -78,7 +78,7 @@ class DisplayMPV(Display):
     """Display using MPV, playing album art as if it were media."""
     def __init__(self, args):
         """Initialise an MPV display."""
-        import mpv
+        import mpv  # pylint: disable=import-outside-toplevel
         Display.__init__(self, args)
         self._player = mpv.MPV(start_event_thread=False)
         self._player["force-window"] = "immediate"
