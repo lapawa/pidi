@@ -190,9 +190,9 @@ class DisplayPIL(Display):
         controls = Image.new('RGBA', (self._size * self._downscale, self._size * self._downscale))
 
         if self._state == "play":
-            controls_img = Image.open(image_dir + "controls-v2-pause.png")
+            controls_img = Image.open(image_dir + "controls-pause.png")
         else:
-            controls_img = Image.open(image_dir + "controls-v2-play.png")
+            controls_img = Image.open(image_dir + "controls-play.png")
 
         controls.paste(controls_img, (0, 0))
 
