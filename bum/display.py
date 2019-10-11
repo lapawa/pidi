@@ -1,6 +1,7 @@
 """
 Display Output Classes.
 """
+import os
 import time
 import math
 from pkg_resources import iter_entry_points
