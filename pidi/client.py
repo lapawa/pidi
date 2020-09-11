@@ -78,7 +78,7 @@ class ClientShairportSync():
 
     def get_art(self, cache_dir, size):
         """Get the album art."""
-        if self.album_art == "":
+        if self.album_art == "" or self.album_art is None:
             util.bytes_to_file(util.default_album_art(), cache_dir / "current.jpg")
             return
     
@@ -123,21 +123,19 @@ class ClientShairportSync():
             self.album_art = data
 
         if (dtype, dcode) == ("core", "asal"):  # Album
-            self.album = data.decode("utf-8")
+            self.album = "" if data is None else data.decode("utf-8")
 
         if (dtype, dcode) == ("core", "asar"):  # Artist
-            self.artist = data.decode("utf-8")
+            self.artist = "" if data is None else data.decode("utf-8")
 
         if (dtype, dcode) == ("core", "minm"):  # Song Name / Item
-            self.title = data.decode("utf-8")
+            self.title = "" if data is None else data.decode("utf-8")
 
         if (dtype, dcode) == ("ssnc", "prsm"):
             self.state = "play"
 
         if (dtype, dcode) == ("ssnc", "pend"):
             self.state = "stop"
-
-        print(dtype, dcode)
 
 
 class ClientMPD():
