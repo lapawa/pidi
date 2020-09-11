@@ -44,6 +44,7 @@ setuptools.setup(
     install_requires=[
         "musicbrainzngs",
         "python-mpd2",
+        "untangle",
     ],
     extras_require={
         'mpv': ["python-mpv"],
