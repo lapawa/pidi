@@ -139,11 +139,11 @@ def main():
                     last_track = current_track
 
                 display.update_overlay(
-                    shuffle=status['random'] == '1',
-                    repeat=status['repeat'] == '1',
-                    state=status['state'],
-                    volume=int(status['volume']),
-                    progress=float(status.get('elapsed', 0)) / float(currentsong['time']),
+                    shuffle=status.get('random',0) == '1',
+                    repeat=status.get('repeat',0) == '1',
+                    state=status.get('state','unknown'),
+                    volume=int(status.get('volume',0)),
+                    progress=float(status.get('elapsed', 0)) / float(currentsong.get('time',0.0)),
                     elapsed=float(status.get('elapsed', 0)),
                     title=title,
                     album=album,
