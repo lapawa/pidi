@@ -1,0 +1,7 @@
+python-mpd2
+musicbrainzngs
+RPi.GPIO
+requests
+ST7789
+Pillow
+spidev
