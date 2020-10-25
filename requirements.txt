@@ -1,7 +1,8 @@
-python-mpd2
 musicbrainzngs
-RPi.GPIO
-requests
-ST7789
+numpy
 Pillow
+python-mpd2
+requests
+RPi.GPIO
 spidev
+ST7789
